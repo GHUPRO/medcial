@@ -4,10 +4,12 @@ import { ref, markRaw } from 'vue'
 import Sidebar from './components/sidebar.vue'
 import Home from './components/home.vue'
 import DiseaseList from './components/diseaselist.vue'
+import List from './components/list.vue'
 
 const pages = {
   home: markRaw(Home),
   disease: markRaw(DiseaseList),
+  list: markRaw(List),
 }
 
 const currentPage = ref(pages.home)

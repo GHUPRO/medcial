@@ -10,7 +10,7 @@ const navItems = [
   { id: 'home', title: '首页', icon: '⌂' },
   { id: 'disease', title: '病症分类', icon: '▤' },
   { id: 'prevention', title: '预防指南', icon: '♡' },
-  { id: 'heart', title: '心脏', icon: '》' },
+  { id: 'list', title: '疾病概览', icon: '》' },
 ]
 
 function selectPage(id) {
