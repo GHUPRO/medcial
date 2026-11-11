@@ -127,17 +127,17 @@ function labelPosition(index) {
 
 function navigationPosition() {
   if (!isExpanded.value) {
-    // 初始状态：界面正中央
+    // 初始状态
     return {
       left: '50%',
       top: '50%'
     }
   }
 
-  // 展开状态：移动到左上角
+  // 展开状态
   return {
     left: '88%',
-    top: '14%'
+    top: '8%'
   }
 }
 </script>
