@@ -3,12 +3,13 @@ import { ref, markRaw } from 'vue'
 
 import Sidebar from './components/sidebar.vue'
 import Home from './components/home.vue'
-import DiseaseList from './components/diseaselist.vue'
+import FirstAid from './components/first-aid.vue'
 import List from './components/list.vue'
 
 const pages = {
   home: markRaw(Home),
-  disease: markRaw(DiseaseList),
+  firstAid: markRaw(FirstAid),
+  prevention: markRaw(FirstAid),
   list: markRaw(List),
 }
 
