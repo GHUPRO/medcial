@@ -5,6 +5,10 @@ defineProps({
     type: String,
     default: '疾病介绍'
   },
+  entitle: {
+    type: String,
+    default: ''
+  },
   sectorId: {
     type: String,
     default: ''
@@ -18,12 +22,12 @@ defineProps({
     <header>
       <span class="category">MEDICAL KNOWLEDGE</span>
       <h1>{{ title }}</h1>
-      <p>heartab</p>
+      <p>{{ entitle }}</p>
     </header>
 
     <section>
       <h2>基本介绍</h2>
-      <p>这里填写疾病的基本介绍。</p>
+      <p>这里应该是康复常识的基本介绍。</p>
     </section>
 
     <section>

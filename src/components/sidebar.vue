@@ -13,8 +13,8 @@ const navItems = [
   //{ id: 'first-aid', title: '急救知识', icon: '🚑' },
   { id: 'home', title: '首页', icon: '⌂' },
   { id: 'list', title: '疾病概览', icon: '▤' },
-  { id: 'prevention', title: '预防指南', icon: '♢' },
-  { id: 'first-aid', title: '急救知识', icon: '♡' },
+  //{ id: 'prevention', title: '预防指南', icon: '♢' },
+  //{ id: 'first-aid', title: '急救知识', icon: '♡' },
 ]
 
 function selectPage(id) {

@@ -2,10 +2,17 @@
 <script setup>
 import { ref, markRaw } from 'vue'
 
-import DiseaseDetail from './details/heartab.vue'
-import PreventionDetail from './details/heartab.vue'
-import HealthDetail from './details/heartab.vue'
-import Heartab from './details/heartab.vue'
+import DiseaseDetail from './details/diseaseDetail.vue'
+import BreathDetail from './details/breathDetail.vue'
+import PreventionDetail from './details/preventionDetail.vue'
+import AtomDetail from './details/atomDetail.vue'
+import SlowDetail from './details/slowDetail.vue'
+import HeartDetail from './details/heartDetail.vue'
+import MindDetail from './details/mindDetail.vue'
+import EatDetail from './details/eatDetail.vue'
+import ImportantDetail from './details/importantDetail.vue'
+import EmergencyDetail from './details/emergencyDetail.vue'
+import RecoveryDetail from './details/recoveryDetail.vue'
 import Common from './details/common.vue'
 
 // ==============================
@@ -13,20 +20,20 @@ import Common from './details/common.vue'
 // ==============================
 
 const sectors = [
-  { id: 'd1', label: '常见疾病', page: markRaw(Common) },
-  { id: 'd2', label: '呼吸系统', page: markRaw(DiseaseDetail) },
-  { id: 'd3', label: '消化系统', page: markRaw(DiseaseDetail) },
-  { id: 'd4', label: '心血管', page: markRaw(Heartab) },
+  { id: 'd1', label: '常见疾病', en: 'Common Diseases', page: markRaw(Common) },
+  { id: 'd2', label: '呼吸系统', en: 'Respiratory System', page: markRaw(BreathDetail) },
+  { id: 'd3', label: '消化系统', en: 'Digestive System', page: markRaw(AtomDetail) },
+  { id: 'd4', label: '心血管', en: 'Cardiovascular System', page: markRaw(HeartDetail) },
 
-  { id: 'd5', label: '神经系统', page: markRaw(DiseaseDetail) },
-  { id: 'd6', label: '感染性疾病', page: markRaw(DiseaseDetail) },
-  { id: 'd7', label: '日常预防', page: markRaw(PreventionDetail) },
-  { id: 'd8', label: '饮食健康', page: markRaw(PreventionDetail) },
+  { id: 'd5', label: '神经系统', en: 'Nervous System', page: markRaw(MindDetail) },
+  { id: 'd6', label: '感染性疾病', en: 'Infectious Diseases', page: markRaw(DiseaseDetail) },
+  { id: 'd7', label: '慢性病症', en: 'Chronic Diseases', page: markRaw(SlowDetail) },
+  { id: 'd8', label: '危急重症', en: 'Critical Conditions', page: markRaw(ImportantDetail) },
 
-  { id: 'd9', label: '运动健康', page: markRaw(PreventionDetail) },
-  { id: 'd10', label: '健康习惯', page: markRaw(HealthDetail) },
-  { id: 'd11', label: '健康知识', page: markRaw(HealthDetail) },
-  { id: 'd12', label: '注意事项', page: markRaw(HealthDetail) }
+  { id: 'd9', label: '预防知识', en: 'Disease Prevention', page: markRaw(PreventionDetail) },
+  { id: 'd10', label: '饮食健康', en: 'Healthy Diet', page: markRaw(EatDetail) },
+  { id: 'd11', label: '康复常识', en: 'Rehabilitation', page: markRaw(RecoveryDetail) },
+  { id: 'd12', label: '急救方法', en: 'First Aid', page: markRaw(EmergencyDetail) }
 ]
 
 // ==============================
@@ -156,6 +163,7 @@ function navigationPosition() {
         <component
           :is="currentDetail"
           :title="selectedSector?.label"
+          :entitle="selectedSector?.en"
           :sector-id="selectedSector?.id"
         />
       </div>
