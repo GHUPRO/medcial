@@ -9,7 +9,7 @@ defineProps({
 })
 
 const emit = defineEmits(['navigate'])
-const collapsed = ref(false)
+const collapsed = ref(true)
 
 const navItems = [
   //{ id: 'home', title: '首页', icon: '🏠' },
