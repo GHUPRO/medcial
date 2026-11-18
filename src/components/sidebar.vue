@@ -1,9 +1,14 @@
 <script setup>
 import { ref } from 'vue'
 
-const emit = defineEmits(['navigate'])
+defineProps({
+  activePage: {
+    type: String,
+    default: 'home'
+  }
+})
 
-const activePage = ref('home')
+const emit = defineEmits(['navigate'])
 const collapsed = ref(false)
 
 const navItems = [
@@ -18,7 +23,6 @@ const navItems = [
 ]
 
 function selectPage(id) {
-  activePage.value = id
   emit('navigate', id)
 }
 </script>

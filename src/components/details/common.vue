@@ -76,7 +76,10 @@ const warnings = [
 
     <header>
       <span class="category">MEDICAL KNOWLEDGE</span>
-      <h1>{{ title }}</h1>
+      <div class="title-line">
+        <h1>{{ title }}</h1>
+        <span class="title-hint">点击右上角呼出轮盘</span>
+      </div>
       <p>{{ entitle }}</p>
     </header>
 
@@ -154,6 +157,21 @@ const warnings = [
 
 header {
   margin-bottom: 30px;
+}
+
+.title-line {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  column-gap: 12px;
+  row-gap: 4px;
+}
+
+.title-hint {
+  color: #8a9aa3;
+  font-size: 12px;
+  font-weight: normal;
+  white-space: nowrap;
 }
 
 header h1 {

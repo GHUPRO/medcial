@@ -1,5 +1,5 @@
 <script setup>
-import { ref, markRaw } from 'vue'
+import { ref, computed, markRaw } from 'vue'
 
 import Sidebar from './components/sidebar.vue'
 import Home from './components/home.vue'
@@ -13,28 +13,29 @@ const pages = {
   list: markRaw(List),
 }
 
-const currentPage = ref(pages.home)
+const currentPageName = ref('home')
+const currentPage = computed(() => pages[currentPageName.value])
 
 function changePage(name) {
   if (pages[name]) {
-    currentPage.value = pages[name]
+    currentPageName.value = name
   }
 }
 </script>
 
 <template>
   <div class="app-container">
-
-    <!-- 左侧侧边栏 -->
-    <Sidebar @navigate="changePage" />
+    <Sidebar
+      :active-page="currentPageName"
+      @navigate="changePage"
+    />
 
     <!-- 右侧主内容 -->
     <main class="main-content">
       <Transition name="fade" mode="out-in">
-        <component :is="currentPage" />
+        <component :is="currentPage" @navigate="changePage" />
       </Transition>
     </main>
-
   </div>
 </template>
 
